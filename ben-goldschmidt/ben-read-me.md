@@ -1,7 +1,7 @@
 // POKEMON CONSTRUCTOR
 // create a constructor function to create a pokemon
 // add the methods onto the .prototype property of the constructor function. 
-// create all new pokemon.
+// create all new pokemon
 // function to create an attackSkill 
 
 // NOTES:
@@ -16,6 +16,9 @@
 // FUNCTIONALITY
 
 // –––––––––– INPUT ––––––––––
+
+// class Pokemon{}
+
 //    What?       Details          Example
 // 1. name   ---> nickname     --> bengee
 // 2. magic  ---> amount       --> (?)
@@ -24,13 +27,18 @@
 //                             --> lightning, 
 //                                 etc
 
+// class attackSkill{};
+
+// 1. name   ---> nickname     --> "lightning"
+// 2. damage ---> amount       --> 40
+// 3. magic  ---> amount       --> 30
 
 
 // –––––––––– ALGORITHM/classes/function ––––––––––
 //
 // Total
-// class    x1
-// methods  x5
+// class    x2
+// methods  x4
 
 // Algorithm 1.
 // newPokemon{}     --> CLASS
@@ -39,7 +47,7 @@
 
 // Algorithm 2.
 // attackSkill()    --> METHOD to CREATE new attack
-// arguments        -->(name, damage, magic)
+// arguments        --> (name, damage, magic)
 
 // Algorithm 3.
 // learnAttackSkill()--> METHOD to LEARN attack
@@ -51,7 +59,7 @@
 
 // Algorithm 5.
 // attack()         --> METHOD to attack
-// arguments        --> (attack index/key of the attack, pokemon attacked)
+// arguments        --> (bulbasaur.skills[indexOf], pokemon to be attacked)
 // logs             --> randomly selected attack
 //                  --> damage dealt
 //                  --> magic depleted
@@ -63,11 +71,10 @@
 // if (magicUse > magicAmount ) { return does not have enough magic}
 // else { return attack was successful!}
 
-
 // Algorithm 6.
 // getMagic         --> METHOD to get/add magic to a pokemon
 // arguments        --> (magicAdded) random amount given
-// Clock creation? --> regen. over time
+// random number  Math.floor(Math.random()*15)
 
 
 
@@ -101,7 +108,7 @@
 
 // ––––––––
 class newPokemon{
-    constructor(name, health, magic, ...skills){
+    constructor(name, health, magic, skills){
         this.name = name;
         this.health = health;
         this.magic = magic;
