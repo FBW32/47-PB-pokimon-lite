@@ -4,6 +4,7 @@
 // create all new pokemon.
 // function to create an attackSkill 
 
+
 // NOTES:
 // 1. Constructs pokemon
 // 2. Pokemon has no skills when created
@@ -69,8 +70,6 @@
 // 
 
 
-
-
 // –––––––––– OUTPUT ––––––––––
 // NEW Pokemon  
 // const newPokemon = new newPokemon(name, health, ...skills);
@@ -90,6 +89,7 @@
 
 
 
+// –––––––––– POKEMON CONSTRUCTOR ––––––––––
 
 class Pokemon {
     // const pikachu = new Pokemon("Pikachu!", 100, 90);
@@ -157,7 +157,7 @@ class Pokemon {
         // METHOD to get/add magic to a pokemon
         let randomMagic = Math.floor(Math.random() * 15);
         this.magic = this.magic + randomMagic;
-        return this.showStatus();
+        return this.showStatus() + ` And has regenerated ${randomMagic} more magic points!`;
     }
 }
 
@@ -180,15 +180,21 @@ class AttackSkill {
 
 
 // TRY INHERENT SKILL ---> parent/child
-// class Pikachu extends Pokemon {
-//     constructor([details]) {
-//         super("Pikachu", 100, 90);
-//         this.skills = details;
-//     }
-// }
+
+class Legendary extends Pokemon {
+    constructor(name, ability) {
+        super(name, 1000, 1000, undefined)
+        this.name = name;
+        this.ability = ability;
+    }
+
+}
 
 
-// –––––––––– NEW Pokemon ––––––––––  
+// –––––––––– NEW Pokemon ––––––––––
+console.log()
+console.log(" –––––––––– NEW Pokemon –––––––––– ")
+
 console.log()
 const pikachu = new Pokemon("Pikachu!", 100, 90);
 console.log(pikachu)
@@ -197,49 +203,82 @@ console.log()
 const bulbasaur = new Pokemon("bulbasaur", 95, 105);
 console.log(bulbasaur)
 
-
-// –––––––––– CREATE skill ––––––––––  
-let lightning = new AttackSkill("lightning", 40, 30);
 console.log()
+const MewTwo = new Legendary("MewTwo", "levitate");
+console.log(MewTwo)
+
+
+
+// –––––––––– CREATE skills ––––––––––  
+console.log()
+console.log(" –––––––––– CREATE Skills –––––––––– ")
+
+console.log()
+
+let lightning = new AttackSkill("lightning", 40, 30);
 console.log(lightning)
 
 let tackle = new AttackSkill("tackle", 30, 20);
-console.log()
 console.log(tackle)
 
 let poisonSeed = new AttackSkill("poison seed", 20, 20);
-console.log()
 console.log(poisonSeed)
 
 let absorb = new AttackSkill("absorb", 20, 20, 10);
-console.log()
 console.log(absorb)
 
+let psychic = new AttackSkill("psychic", 80, 40);
+console.log(psychic)
 
-// –––––––––– LEARN skill ––––––––––  
+
+
+// –––––––––– LEARN skill ––––––––––
 console.log()
-console.log(pikachu.learnAttackSkill(lightning));
+console.log(" –––––––––– LEARN skills –––––––––– ")
+
+console.log()
+
+pikachu.learnAttackSkill(lightning);
+pikachu.learnAttackSkill(tackle);
 console.log(pikachu)
 
 console.log()
-console.log(pikachu.learnAttackSkill(tackle));
-console.log(pikachu)
-
 bulbasaur.learnAttackSkill(poisonSeed);
-console.log(bulbasaur)
-
 bulbasaur.learnAttackSkill(absorb);
 console.log(bulbasaur)
+
+console.log()
+MewTwo.learnAttackSkill(psychic);
+MewTwo.learnAttackSkill(lightning);
+console.log(MewTwo)
 
 
 // –––––––––– SHOW status ––––––––––  
 console.log()
+console.log(" –––––––––– SHOW status –––––––––– ")
+
+console.log()
+
 console.log(pikachu.showStatus());
 console.log(bulbasaur.showStatus());
+console.log(MewTwo.showStatus());
+
+console.log()
+console.log(`${bulbasaur.name} has these attacks `, bulbasaur.skills);
+
+console.log()
+console.log(`${pikachu.name} has these attacks `, pikachu.skills);
+
+console.log()
+console.log(`${MewTwo.name} has these attacks `, MewTwo.skills);
 
 
 // –––––––––– ATTACK pokemon ––––––––––  
 console.log()
+console.log(" –––––––––– ATTACK pokemon –––––––––– ")
+
+console.log()
+
 console.log(pikachu.attack(0, bulbasaur));
 console.log(pikachu.showStatus());
 console.log(bulbasaur.showStatus());
@@ -263,11 +302,9 @@ console.log(bulbasaur.showStatus());
 
 // –––––––––– GET magic ––––––––––  
 console.log()
+console.log(" –––––––––– GET magic –––––––––– ")
+console.log()
 console.log(pikachu.getMagic());
 console.log(bulbasaur.getMagic());
 
-console.log()
-console.log(`${bulbasaur.name} has these attacks `, bulbasaur.skills);
 
-console.log()
-console.log(`${pikachu.name} has these attacks `, pikachu.skills);
