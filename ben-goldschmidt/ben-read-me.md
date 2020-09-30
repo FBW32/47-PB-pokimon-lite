@@ -11,6 +11,7 @@
 // 4. Add skills
 // 5. Check pokemon status
 // 6. Attack/battle
+// 7. getMagic
 
 
 // FUNCTIONALITY
@@ -19,15 +20,19 @@
 
 // class Pokemon{}
 
+// const pikachu = new Pokemon("Pikachu!", 100, 90);
+
 //    What?       Details          Example
 // 1. name   ---> nickname     --> bengee
 // 2. magic  ---> amount       --> (?)
 // 3. health ---> amount       --> max 200(?)
 // 4. skills ---> array/object --> max 4 skills 
-//                             --> lightning, 
+//                             --> lightning, (currently undefined) 
 //                                 etc
 
 // class attackSkill{};
+
+// let lightning = new AttackSkill("lightning", 40, 30);
 
 // 1. name   ---> nickname     --> "lightning"
 // 2. damage ---> amount       --> 40
@@ -46,7 +51,7 @@
 
 
 // Algorithm 2.
-// attackSkill()    --> METHOD to CREATE new attack
+// AttackSkill()    --> CLASS to CREATE new attack
 // arguments        --> (name, damage, magic)
 
 // Algorithm 3.
